@@ -17,26 +17,21 @@ public class Rover {
 	}
 
 	
-	
 	public int getX() {
 		return x;
 	}
-
 
 	public int getY() {
 		return y;
 	}
 
-
 	public char getCardinal() {
 		return cardinal;
 	}
 
-
 	public boolean isFinalized() {
 		return finalized;
 	}
-
 
 	public void initialPosition(String roverPos) {
 		x = Character.getNumericValue(roverPos.charAt(0));
@@ -124,10 +119,14 @@ public class Rover {
 		finalized = true;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Rover's final coordinates and heading: " + x + " " + y + " " + cardinal;
+		return "Rover's final coordinates and heading: " 
+				+ x 
+				+ " " 
+				+ y 
+				+ " " 
+				+ cardinal;
 	}	
 	
 	
