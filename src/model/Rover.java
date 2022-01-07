@@ -106,14 +106,20 @@ public class Rover {
 				rotateLeft();
 			} else if (path.charAt(i) == 'R') {
 				rotateRight();
-			} else if (path.charAt(i) == 'M') {
+			} else if (path.charAt(i) == 'M') { 
 				try {
 					moveForward(maxGridX,maxGridY);					
 				} catch (OutOfGridException outOfGrid) {
-					System.out.println("The rover crossed the boundaries of the plateau");
+					System.out.println("The rover crossed the boundaries of the plateau. Turning back...");
+					if (x > maxGridX) {
+						x -= 1;
+					} else if (y > maxGridY) {
+						y -= 1;
+					}
 				}
-				
-			}	
+			}	else {
+				System.out.println("Incorrect input " + path.charAt(i) + ". Skipping command...");
+			}
 		}
 		finalized = true;
 	}

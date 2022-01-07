@@ -1,5 +1,7 @@
 package model;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -99,5 +101,14 @@ public class RoverTest {
 		rover.explore("LMLMLMLMM", 5, 5);
 		assertTrue(rover.getX() == 1 && rover.getY() == 3 && rover.getCardinal() == 'N');
 	}
+	
+	@Test
+	void isFinalized() {
+		assertFalse(rover.isFinalized());
+		rover.initialPosition("1 2 N");
+		rover.explore("LMLMLMLMM", 5, 5);
+		assertTrue(rover.isFinalized());
+	}
+	
 	
 }

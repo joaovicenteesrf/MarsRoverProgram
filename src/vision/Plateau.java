@@ -10,6 +10,8 @@ public class Plateau {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		Rover rover1 = new Rover(0, 0, 'N');
+		Rover rover2 = new Rover(0, 0, 'N');
 		
 		System.out.println("Please enter the upper right coordinates of the plateau: ");
 		String maxGrid = sc.nextLine().trim();
@@ -19,9 +21,6 @@ public class Plateau {
 		
 		System.out.println("Please enter the initial coordinate of the first rover: ");
 		String roverPos = sc.nextLine().trim();
-		
-		Rover rover1 = new Rover(0, 0, 'N');
-		Rover rover2 = new Rover(0, 0, 'N');
 		
 		rover1.initialPosition(roverPos);
 		
